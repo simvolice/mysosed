@@ -1,0 +1,26 @@
+
+
+{{#if errors}}
+
+
+      <h1>{{errors}}</h1>
+
+
+
+{{/if}}
+
+
+
+
+<form role="form" action="/auth/local" method="post">
+  <input type="text" name="identifier" placeholder="Username or Email">
+  <input type="password" name="password" placeholder="Password">
+  <button type="submit">Sign in</button>
+</form>
+
+<h4> {{"Error.Passport.Password.Wrong"}}</h4>
+{{#each providers}}
+    <a href="/auth/{{slug}}" role="button">{{name}}</a>
+{{/each}}
+
+
